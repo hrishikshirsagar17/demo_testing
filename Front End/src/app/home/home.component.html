@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 style="text-align: center;">Active Restaurants</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Restaurant Name</th>
+            <th>Address</th>
+            <th>Contact Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let r of restaurants | async">        
+            <tr *ngIf="r.active==true">
+            <td>{{r.restName}}</td>
+            <td>{{r.address}}</td>
+            <td>{{r.phoneNo}}</td>
+            <td>
+                <button (click)="restaurantDetails(r.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </ng-container> 
+        </tbody>
+      </table>
+    </div>
+  </div>

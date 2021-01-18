@@ -1,0 +1,22 @@
+<div class="topnav">
+    <h3>ZONIONS</h3>
+    <div class="toplinks">
+
+        <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/home']">Home</a>
+
+        <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/restaurants']">Restaurants</a>
+        
+        <a href="">Contact Us</a>
+
+        <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/add']">Register With Us</a>
+        
+       
+        <a href="">Blogs</a>
+
+        <a *ngIf="!loginService.isUserLoggedIn()" [routerLink]="['/login']">Login</a>
+        
+        <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/logout']">Logout</a>
+      
+    </div>
+    <div class="clear"></div>
+</div>
